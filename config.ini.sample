@@ -1,0 +1,23 @@
+[server]
+host = irc.foonetic.net
+port = 6667
+realname = Maintained by zigdon
+username = zigdon
+nick = TestCat
+
+[nickserv]
+password = example_password
+
+[modules]
+kitnirc.contrib.foonetic = 1
+kitnirc.contrib.healthcheck = 2
+kitnirc.contrib.admintools = 3
+
+[admins]
+nick!name@hostmask = 1
+
+[database]
+path = corpcat.sqlite3
+
+[channels]
+testcat = unused
