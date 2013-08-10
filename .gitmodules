@@ -1,0 +1,6 @@
+[submodule "lib/kitnirc"]
+	path = lib/kitnirc
+	url = git://github.com/ayust/kitnirc
+[submodule "lib/evelink"]
+	path = lib/evelink
+	url = git://github.com/eve-val/evelink
