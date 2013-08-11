@@ -36,7 +36,7 @@ class Account(Base):
         self.is_admin = is_admin
 
     def __repr__(self):
-        return "Account('%s', %s)" % (self.account, self.is_admin)
+        return "Account(%r, %r)" % (self.account, self.is_admin)
 
 class ApiKey(Base):
     __tablename__ = 'api_key'
@@ -55,7 +55,7 @@ class ApiKey(Base):
         self.last_check = last_check
 
     def __repr__(self):
-        return "ApiKey('%s')" % self.keyid
+        return "ApiKey(%r)" % self.keyid
 
 class Character(Base):
     __tablename__ = 'character'
@@ -68,6 +68,6 @@ class Character(Base):
         self.corp_name = corp_name
 
     def __repr__(self):
-        return "Character('%s', '%s')" % (self.name, self.corp_name)
+        return "Character(%r, %r)" % (self.name, self.corp_name)
 
 # vim: ts=4 sts=4 sw=4 et :
