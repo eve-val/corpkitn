@@ -49,4 +49,6 @@ class EveTimeModule(Module):
             self.controller.client.msg(channel, msg)
 
 
+module = EveTimeModule
+
 # vim: set ts=4 sts=4 sw=4 et:
