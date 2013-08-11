@@ -3,6 +3,12 @@
 
 import argparse
 import logging
+import os
+import sys
+
+# Add the necessary paths...
+sys.path.insert(0, os.path.join(os.getcwd(), 'lib', 'evelink'))
+sys.path.insert(0, os.path.join(os.getcwd(), 'lib', 'kitnirc'))
 
 import kitnirc.client
 import kitnirc.contrib.admintools
