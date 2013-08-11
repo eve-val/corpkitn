@@ -16,6 +16,11 @@ account_api_m2m = Table('account_key_m2m', Base.metadata,
     Column('api_key_pk', Integer, ForeignKey('api_key.keyid'))
 )
 
+api_character_m2m = Table('key_char_m2m', Base.metadata,
+    Column('api_key_pk', Integer, ForeignKey('api_key.keyid')),
+    Column('character_pk', Integer, ForeignKey('character.name')),
+)
+
 class Account(Base):
     __tablename__ = 'account'
 
@@ -42,7 +47,7 @@ class ApiKey(Base):
 
     characters = relationship("Character",
                               backref="api",
-                              cascade="all, delete, delete-orphan")
+                              secondary=api_character_m2m)
 
     def __init__(self, key_id, vcode, last_check=None):
         self.keyid = key_id
@@ -57,7 +62,6 @@ class Character(Base):
 
     name = Column(String, primary_key=True)
     corp_name = Column(String, nullable=False)
-    api_key_id = Column(Integer, ForeignKey('api_key.keyid'))
 
     def __init__(self, name, corp_name):
         self.name = name
