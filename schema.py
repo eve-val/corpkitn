@@ -21,6 +21,7 @@ api_character_m2m = Table('key_char_m2m', Base.metadata,
     Column('character_pk', Integer, ForeignKey('character.name')),
 )
 
+
 class Account(Base):
     __tablename__ = 'account'
 
@@ -37,6 +38,7 @@ class Account(Base):
 
     def __repr__(self):
         return "Account(%r, %r)" % (self.account, self.is_admin)
+
 
 class ApiKey(Base):
     __tablename__ = 'api_key'
@@ -56,6 +58,7 @@ class ApiKey(Base):
 
     def __repr__(self):
         return "ApiKey(%r)" % self.keyid
+
 
 class Character(Base):
     __tablename__ = 'character'
