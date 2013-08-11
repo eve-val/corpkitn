@@ -12,7 +12,8 @@ _log = logging.getLogger(__name__)
 class EveTimeModule(Module):
     """A KitnIRC module that reports EVE time to channel."""
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
+        super(EveTimeModule, self).__init__(*args, **kwargs)
         # For now, we'll just report to all listed channels every hour,
         # on the hour. Later on we can add configurable intervals.
         self.channels = list(self.controller.config.items("evetime"))
